@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Calendar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>SolatTime</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calendar.html" class="active">Calendar</a>
+      <a href="reminders.html">Reminders</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Monthly Prayer Calendar</h2>
+      <div class="form-row">
+        <div class="field">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="e.g. Kuala Lumpur">
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input type="text" id="country" value="Malaysia">
+        </div>
+        <button id="loadBtn">Load This Month</button>
+      </div>
+      <p id="message"></p>
+    </section>
+
+    <section class="card table-wrap">
+      <table id="calendarTable"></table>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reminders</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>SolatTime</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="reminders.html" class="active">Reminders</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Activity Reminders</h2>
+      <div class="form-row">
+        <div class="field">
+          <label for="title">Activity</label>
+          <input type="text" id="title" placeholder="e.g. Baca Surah Al-Mulk">
+        </div>
+        <div class="field">
+          <label for="prayer">After prayer</label>
+          <select id="prayer">
+            <option>Fajr</option>
+            <option>Dhuhr</option>
+            <option>Asr</option>
+            <option>Maghrib</option>
+            <option>Isha</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="note">Note</label>
+          <input type="text" id="note" placeholder="Optional">
+        </div>
+        <button id="addBtn">Add Reminder</button>
+        <button id="cancelBtn" style="display:none">Cancel</button>
+      </div>
+      <p id="message"></p>
+    </section>
+
+    <section class="card">
+      <h3>Saved Reminders</h3>
+      <ul id="list"></ul>
+    </section>
+  </main>
+
+  <script src="js/storage.js"></script>
+  <script src="js/reminders.js"></script>
+</body>
+</html>

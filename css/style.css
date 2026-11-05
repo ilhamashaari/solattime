@@ -1,0 +1,214 @@
+/* ---------- Colour and size variables (change here to restyle everything) ---------- */
+:root {
+  --green-dark: #14532d;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --gold: #ca8a04;
+  --bg: #f4f7f5;
+  --text: #1f2937;
+  --border: #d1d5db;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---------- Header and navigation ---------- */
+header {
+  background: var(--green-dark);
+  color: white;
+  padding: 16px 24px;
+}
+
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 26px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+nav a:hover { background: rgba(255, 255, 255, 0.2); }
+nav a.active { background: var(--green); font-weight: bold; }
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.card h2, .card h3 {
+  margin-top: 0;
+  color: var(--green-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Forms ---------- */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label { font-size: 14px; font-weight: bold; }
+
+input, select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--green);
+  border-color: var(--green);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover { background: var(--green-dark); }
+
+/* Cancel button is grey so it looks different from the main action */
+#cancelBtn { background: #6b7280; }
+#cancelBtn:hover { background: #4b5563; }
+
+/* Delete button is red */
+.btn-delete { background: #dc2626; }
+.btn-delete:hover { background: #991b1b; }
+
+/* ---------- Message area (colour is set by JavaScript) ---------- */
+#message {
+  min-height: 24px;
+  margin: 12px 0;
+  font-weight: bold;
+}
+
+/* ---------- Prayer times list ---------- */
+#timesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#timesList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 17px;
+}
+
+#timesList li:last-child { border-bottom: none; }
+
+/* ---------- Highlighted info ---------- */
+#countdown {
+  color: var(--gold);
+  font-size: 22px;
+  margin: 0;
+}
+
+#hijri, #qibla, #asma, #suggestion { margin: 6px 0; }
+
+#suggestion {
+  background: var(--green-light);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+
+/* ---------- History and reminders lists ---------- */
+#suggestionHistory, #list {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+#suggestionHistory li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+#list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Push the Edit and Delete buttons to the right side */
+#list li button:first-of-type { margin-left: auto; }
+
+#list li button { padding: 6px 12px; font-size: 14px; }
+
+/* ---------- Calendar table ---------- */
+.table-wrap { overflow-x: auto; }
+
+#calendarTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+#calendarTable th {
+  background: var(--green-dark);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#calendarTable td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#calendarTable tr:hover td { background: #f0fdf4; }
